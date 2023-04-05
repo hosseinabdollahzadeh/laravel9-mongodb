@@ -11,7 +11,8 @@
                 <div class="mt-3">
                     <ul class="list-item">
                         @forelse($authors as $author)
-                            <li class="list-item-grout mb-3">{{$author->name}}
+                            <li class="list-item-grout mb-3">
+                                {{$author->name}} | Total Books: {{count($author->books)}}
                             <span class="float-end d-flex">
                                 <a href="{{route('authors.edit', $author->id)}}" class="btn btn-sm btn-warning me-2">Edit</a>
                                 <form action="{{route('authors.destroy', $author->id)}}"  method="post">
