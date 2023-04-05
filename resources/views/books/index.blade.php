@@ -23,7 +23,11 @@
                                 <td>{{$book->name}}</td>
                                 <td>${{$book->price}}</td>
                                 <td>{{$book->pages}}</td>
-                                <td>{{$book->author->name}}</td>
+                                <td>
+                                    {{$book->author->name}}
+{{--                                    {{optional($book->author)->name}}--}}
+{{--                                    {{$book->author ? $book->author->name : "not found.}}--}}
+                                </td>
                                 <td class="d-flex">
                                     <a href="{{route('books.edit', $book->id)}}"
                                        class="btn btn-sm btn-warning me-2">Edit</a>
